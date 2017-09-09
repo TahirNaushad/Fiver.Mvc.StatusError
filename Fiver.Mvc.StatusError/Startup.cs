@@ -16,7 +16,10 @@ namespace Fiver.Mvc.StatusError
             IApplicationBuilder app, 
             IHostingEnvironment env)
         {
+            app.UseDeveloperExceptionPage();
+
             app.UseStatusCodePagesWithReExecute("/Errors/Index", "?statusCode={0}");
+            //app.UseStatusCodePagesWithRedirects("/Errors/Index?statusCode={0}");
 
             app.UseMvcWithDefaultRoute();
         }

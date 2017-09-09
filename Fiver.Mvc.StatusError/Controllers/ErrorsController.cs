@@ -10,8 +10,8 @@ namespace Fiver.Mvc.StatusError.Controllers
             var feature = HttpContext.Features.Get<IStatusCodeReExecuteFeature>();
 
             ViewBag.StatusCode = statusCode;
-            ViewBag.OriginalPath = feature.OriginalPath;
-            ViewBag.OriginalQueryString = feature.OriginalQueryString;
+            ViewBag.OriginalPath = feature?.OriginalPath;
+            ViewBag.OriginalQueryString = feature?.OriginalQueryString;
 
             return View();
         }
